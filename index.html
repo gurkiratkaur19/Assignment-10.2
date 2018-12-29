@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            class Airplane{
+                constructor(name, occupancy, speed){
+                    this.name = name;
+                    this.occupancy = occupancy;
+                    this.speed = speed;
+                }
+
+                validate(){
+                    if(!this.name==''){
+                    }
+                    else{
+                        alert('The name is empty');
+                        return false;
+                    }
+
+                    if((this.occupancy)!='' && (this.occupancy>0)  && (this.occupancy<181)){
+                    }
+                    else{
+                        alert("occupancy is no in the range");
+                        return false;
+                    }
+
+                    if((this.speed)!= '' && (this.speed>0) && (this.speed<901)){
+
+                    }
+                    else{
+                        alert("Speed is not in the range");
+                        return false;
+                    }
+                }
+
+                status(){
+                    if(this.validate()){
+                        console.log("Airplane: "+this.name+" with "+this.occupancy+" ocuupancy, is moving at "+this.speed+"Km/hr");
+                    }
+                }
+
+                increaseSpeed(sp){
+                    if(this.validate()){
+                        this.speed = this.speed + sp;
+                    }
+                    else{
+                        alert("New speed is not in the range");
+                    }
+                    
+                }
+                decreaseSpeed(sp){
+                    if(this.validate()){
+                        this.speed = this.speed - sp;
+                    }
+                    else{
+                        alert("New speed is not in the range");
+                    }
+                }
+            }
+            var obj = new Airplane("Boeing",180,900);
+            obj.validate();
+            obj.status();
+
+            var obj1 = new Airplane("Jet Airways", 150, 800);
+            var obj2 = new Airplane("Vistara", 151, 801);
+            var obj3 = new Airplane("Air Asia", 152, 802);
+
+            obj1.increaseSpeed(200);
+            obj2.increaseSpeed(200);
+            obj3.increaseSpeed(200);
+        </script>
+    </body>
+</html>
